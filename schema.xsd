@@ -219,7 +219,7 @@
                                                             &quot;primary&quot; national identifier of the student. For more information on
                                                             national identifiers used for various nationalities, see:
                                                             https://en.wikipedia.org/wiki/National_identification_number
-                                                        
+
                                                         esi - European Student Identifier. For more information see:
                                                             https://wiki.geant.org/display/SM/European+Student+Identifier
 
@@ -273,7 +273,7 @@
                             </xs:element>
                             <xs:element minOccurs="0" maxOccurs="1" name="birthName" type="xs:token">
                                 <xs:annotation>
-                                    <xs:documentation>First name(s) and family name(s) of the student at birth, described as a single text value. 
+                                    <xs:documentation>First name(s) and family name(s) of the student at birth, described as a single text value.
 
                                         For server implementers: If this is not known then you MUST skip the element
                                         altogether (instead of, for example, providing an empty value).
@@ -848,7 +848,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="identifier">
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="identifier">
                 <xs:annotation>
                     <xs:documentation>For server implementers: Depending on your clients, you might be required to
                         supply specific identifier types (because clients expect them). E.g. some EMREX
@@ -1032,6 +1032,8 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element minOccurs="0" name="country" type="europass:countryCode"/>
+            <xs:element minOccurs="0" name="state" type="xs:token"/>
             <xs:element name="specifies">
                 <xs:annotation>
                     <xs:documentation>Just a wrapper for learningOpportunityInstance (we're trying to be
@@ -1194,6 +1196,12 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
+                                    <xs:element name="resultLabel2" type="TokenWithOptionalLang" minOccurs="0" maxOccurs="10">
+                                        <xs:annotation>
+                                            <xs:documentation>@TODO: Better description here. A resultlabel with language attribute.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
                                     <xs:element name="shortenedGrading" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>Optional. Might be provided by some servers.
@@ -1254,6 +1262,14 @@
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                     <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="resultLabel2" type="TokenWithOptionalLang" minOccurs="0" maxOccurs="10">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>@TODO: Better description here. A resultlabel with language attribute.
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                        </xs:sequence>
                                                         <xs:attribute name="label" type="xs:token" use="required">
                                                             <xs:annotation>
                                                                 <xs:documentation>The label of the histogram range. Should correspond to the grading scheme
@@ -1357,7 +1373,7 @@
                                                 </xs:element>
                                                 <xs:element minOccurs="0" name="description" type="PlaintextMultilineStringWithOptionalLang">
                                                     <xs:annotation>
-                                                        <xs:documentation>An optional detailed description of the the type of level that is being supplied. 
+                                                        <xs:documentation>An optional detailed description of the the type of level that is being supplied.
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
