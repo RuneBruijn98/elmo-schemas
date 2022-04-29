@@ -1198,7 +1198,12 @@
                                     </xs:element>
                                     <xs:element name="resultLabel2" type="TokenWithOptionalLang" minOccurs="0" maxOccurs="10">
                                         <xs:annotation>
-                                            <xs:documentation>@TODO: Better description here. A resultlabel with language attribute. test
+                                            <xs:documentation>The final grade awarded for the student. This SHOULD contain the same value as
+                                                the one printed in the official documents in the server's country.
+
+                                                A note for client implementers: You MUST be prepared for the resultLabel
+                                                to NOT be present. Some servers may not actually keep the grades, so they
+                                                may not be able to include them here.
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -1265,7 +1270,12 @@
                                                         <xs:sequence>
                                                             <xs:element name="resultLabel2" type="TokenWithOptionalLang" minOccurs="0" maxOccurs="10">
                                                                 <xs:annotation>
-                                                                    <xs:documentation>@TODO: Better description here. A resultlabel with language attribute.
+                                                                    <xs:documentation>The final grade awarded for the student. This SHOULD contain the same value as
+                                                                        the one printed in the official documents in the server's country.
+
+                                                                        A note for client implementers: You MUST be prepared for the resultLabel
+                                                                        to NOT be present. Some servers may not actually keep the grades, so they
+                                                                        may not be able to include them here.
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
