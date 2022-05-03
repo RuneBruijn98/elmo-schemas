@@ -1215,10 +1215,10 @@
                                     </xs:element>
                                     <xs:element name="resultLabel2" type="TokenWithOptionalLang" minOccurs="0" maxOccurs="10">
                                         <xs:annotation>
-                                            <xs:documentation>The final grade awarded for the student. This SHOULD contain the same value as
-                                                the one printed in the official documents in the server's country.
+                                            <xs:documentation>The final grade awarded for the student with a language type to make
+                                                it possible to have the result in multiple languages (e.g. 'good' in English and 'goed' in Dutch).
 
-                                                A note for client implementers: You MUST be prepared for the resultLabel
+                                                A note for client implementers: You MUST be prepared for the resultLabel2
                                                 to NOT be present. Some servers may not actually keep the grades, so they
                                                 may not be able to include them here.
                                             </xs:documentation>
@@ -1287,10 +1287,10 @@
                                                         <xs:sequence>
                                                             <xs:element name="resultLabel2" type="TokenWithOptionalLang" minOccurs="0" maxOccurs="10">
                                                                 <xs:annotation>
-                                                                    <xs:documentation>The final grade awarded for the student. This SHOULD contain the same value as
-                                                                        the one printed in the official documents in the server's country.
+                                                                    <xs:documentation>The final grade awarded for the student with a language type to make
+                                                                        it possible to have the result in multiple languages (e.g. 'good' in English and 'goed' in Dutch).
 
-                                                                        A note for client implementers: You MUST be prepared for the resultLabel
+                                                                        A note for client implementers: You MUST be prepared for the resultLabel2
                                                                         to NOT be present. Some servers may not actually keep the grades, so they
                                                                         may not be able to include them here.
                                                                     </xs:documentation>
