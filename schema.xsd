@@ -421,6 +421,14 @@
                                                 </xs:documentation>
                                             </xs:annotation>
                                         </xs:element>
+                                        <xs:element name="address" type="ewpAddress:FlexibleAddress">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    The issuer's address. This element has been described in detail in Erasmus Without Paper:
+                                                    https://github.com/erasmus-without-paper/ewp-specs-types-address
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -850,7 +858,7 @@
         <xs:sequence>
             <xs:element maxOccurs="unbounded" minOccurs="1" name="identifier">
                 <xs:annotation>
-                    <xs:documentation>For server implementers: Depending on your clients, you might be required to
+                    <xs:documentation>For server implementers: Depending on your clients, it is required to
                         supply specific identifier types (because clients expect them). E.g. some EMREX
                         clients expect the &quot;local&quot; identifier to be present.
                     </xs:documentation>
@@ -1033,7 +1041,16 @@
                 </xs:annotation>
             </xs:element>
             <xs:element minOccurs="0" name="country" type="europass:countryCode"/>
+                <xs:annotation>
+                    <xs:documentation>An ISO 3166-1-alpha-2 code of the country
+                        of the learningOpportunityInstance.
+                    </xs:documentation>
+                </xs:annotation>
             <xs:element minOccurs="0" name="state" type="xs:token"/>
+                <xs:annotation>
+                    <xs:documentation>The state of the learningOpportunityInstance.
+                    </xs:documentation>
+                </xs:annotation>
             <xs:element name="specifies">
                 <xs:annotation>
                     <xs:documentation>Just a wrapper for learningOpportunityInstance (we're trying to be
